@@ -10,7 +10,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "clangd" }
+				ensure_installed = { "lua_ls" , "clangd" }
 			})
 		end
 	},
@@ -23,15 +23,18 @@ return {
 			{ "<leader>ca", vim.lsp.buf.code_action, mode = { "n" , "v" }, desc = "Code Action" }
 		},
 		config = function()
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.clangd.setup({
-				cmd = {
-					"clangd",
-					"--query-driver=C:/Users/Robbie/AppData/Local/nvim-data/mason/packages/clangd/clangd_19.1.0/bin",
-					"--enable-config",
-				},
-			})
+				lspconfig.lua_ls.setup({
+					capabilities = capabilities
+				})
+				lspconfig.clangd.setup({
+					capabilities = capabilities,
+					 cmd = {
+					 	"clangd",
+					 	"--enable-config",
+					 },
+				})
 		end
 	},
 }
