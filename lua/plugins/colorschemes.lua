@@ -7,7 +7,7 @@ return {
 			vim.cmd([[colorscheme nvimgelion]])
 		end,
 	},
-	
+
 	{
 		"ilof2/posterpole.nvim",
 		enabled = true,

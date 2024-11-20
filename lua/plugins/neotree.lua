@@ -1,7 +1,7 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
-	dependencies = { 
+	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
@@ -28,11 +28,40 @@ return {
 	},
 
 	-- KEYBINDS
+	cmd = "Neotree",
 	keys = {
-		{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "toggle Neotree" },
-		{ "<leader>E", "<cmd>Neotree<cr>", desc = "focus on Neotree" },
+		{
+			"<leader>fe",
+			function()
+				-- Assuming you want to use `vim.fn.getcwd()` as root
+				require("neo-tree.command").execute({ toggle = true, dir = vim.fn.getcwd() })
+			end,
+			desc = "Explorer NeoTree (Root Dir)",
+		},
+		{
+			"<leader>fE",
+			function()
+				require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+			end,
+			desc = "Explorer NeoTree (cwd)",
+		},
+		{ "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
+		{ "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
+		{
+			"<leader>ge",
+			function()
+				require("neo-tree.command").execute({ source = "git_status", toggle = true })
+			end,
+			desc = "Git Explorer",
+		},
+		{
+			"<leader>be",
+			function()
+				require("neo-tree.command").execute({ source = "buffers", toggle = true })
+			end,
+			desc = "Buffer Explorer",
+		},
 	},
-
 	config = function ()
 		-- If you want icons for diagnostic errors, you'll need to define them somewhere:
 		vim.fn.sign_define("DiagnosticSignError",
@@ -51,7 +80,7 @@ return {
 			enable_diagnostics = true,
 			open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 			sort_case_insensitive = false, -- used when sorting files and directories in the tree
-			sort_function = nil , -- use a custom function for sorting files and directories in the tree 
+			sort_function = nil , -- use a custom function for sorting files and directories in the tree
 			-- sort_function = function (a,b)
 			--       if a.type == b.type then
 			--           return a.path > b.path
@@ -154,9 +183,9 @@ return {
 					nowait = true,
 				},
 				mappings = {
-					["<space>"] = { 
-						"toggle_node", 
-						nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
+					["<space>"] = {
+						"toggle_node",
+						nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
 					},
 					["<2-LeftMouse>"] = "open",
 					["<cr>"] = "open",
@@ -177,7 +206,7 @@ return {
 					-- ['C'] = 'close_all_subnodes',
 					["z"] = "close_all_nodes",
 					--["Z"] = "expand_all_nodes",
-					["a"] = { 
+					["a"] = {
 						"add",
 						-- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
 						-- some commands may take optional config options, see `:h neo-tree-mappings` for details
