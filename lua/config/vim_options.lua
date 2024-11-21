@@ -5,7 +5,7 @@ opt.relativenumber = true
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
-opt.mouse = 'a'
+opt.mouse = "a"
 
 opt.showmode = false
 
@@ -16,7 +16,7 @@ opt.undofile = true -- Save undo history
 opt.ignorecase = true
 opt.smartcase = true
 
-opt.signcolumn = 'yes' -- Keep signcolumn on by default
+opt.signcolumn = "yes" -- Keep signcolumn on by default
 opt.updatetime = 250 -- Decrease update time
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -27,24 +27,35 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.list = false
-opt.listchars = { tab = '> ', trail = '·', nbsp = '␣' }
+opt.listchars = { tab = "> ", trail = "·", nbsp = "␣" }
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
-opt.inccommand = 'split' -- Preview substitutions live, as you type!
+opt.inccommand = "split" -- Preview substitutions live, as you type!
 opt.cursorline = true -- Show which line your cursor is on
-opt.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
+opt.scrolloff = 15 -- Minimal number of screen lines to keep above and below the cursor.
 opt.hlsearch = false -- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
+local map = vim.keymap.set
 
-vim.keymap.set({ "i", "v" }, "<C-j>", "<Esc>")
+map("n", "<Esc>", "<cmd>nohlsearch<cr>")
+map({ "i", "v" }, "<C-j>", "<Esc>")
 
 -- Yank into clipboard
-vim.keymap.set({ "i", "n", "v" }, "<M-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set({ "i", "n", "v" }, "<M-k>", ":m '<-2<CR>gv=gv")
+map("n", "<leader>Y", '"+Y')
 
-vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- move lines with Alt
+map("v", "<M-j>", ":m '>+1<CR>gv=gv")
+map("v", "<M-k>", ":m '<-2<CR>gv=gv")
+map("n", "<M-j>", ":m .+1<CR>==")
+map("n", "<M-k>", ":m .-2<CR>==")
+map("i", "<M-j>", "<cmd>m .+1<cr>")
+map("i", "<M-k>", "<cmd>m .-2<cr>")
+
+-- Move Selection inside of line
+map("v", "<M-l>", "lholhxp`[1v")
+map("v", "<M-h>", "hlohlxhP`[1v")
+map("n", "<M-l>", "xp")
+map("n", "<M-h>", "xhhp")
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -52,20 +63,20 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 --- Auto-remove trailing whitespace on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = {"*"},
-    callback = function()
+	pattern = { "*" },
+	callback = function()
 		local cursor_pos = vim.api.nvim_win_get_cursor(0)
 		vim.cmd([[%s/\s\+$//e]])
 		vim.api.nvim_win_set_cursor(0, cursor_pos)
-    end,
+	end,
 })
