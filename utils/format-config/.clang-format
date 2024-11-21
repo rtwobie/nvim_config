@@ -1,0 +1,11 @@
+# copy to project folder
+---
+BasedOnStyle: GNU
+ColumnLimit: '80'
+UseTab: Always
+IndentWidth: '4'
+TabWidth: '4'
+BreakBeforeBraces: Allman
+PointerAlignment: Right
+
+...
