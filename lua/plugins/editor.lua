@@ -7,7 +7,7 @@ return {
 			require("autoclose").setup({
 				-- custom stuff like
 				keys = {
-					["<"] = { escape = true, close = true, pair = "<>", disabled_filetypes = { "c", "cpp" } },
+					["<"] = { escape = true, close = true, pair = "<>", enabled_filetypes = { "lua" } },
 				},
 			})
 		end,
