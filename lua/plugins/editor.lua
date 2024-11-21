@@ -3,13 +3,13 @@ return {
 	-- "tpope/vim-repeat",
 	{
 		"m4xshen/autoclose.nvim", -- Brace Pairing/Completion
-		config = function ()
+		config = function()
 			require("autoclose").setup({
 				-- custom stuff like
-				--  keys = {
-				--		["$"] = { escape = true, close = true, pair = "$$", disabled_filetypes = {} },
-				--	},
+				keys = {
+					["<"] = { escape = true, close = true, pair = "<>", disabled_filetypes = { "c", "cpp" } },
+				},
 			})
-		end
+		end,
 	},
 }
