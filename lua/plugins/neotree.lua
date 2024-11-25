@@ -31,7 +31,7 @@ return {
 	cmd = "Neotree",
 	keys = {
 		{
-			"<leader>fe",
+			"<leader>\\",
 			function()
 				-- Assuming you want to use `vim.fn.getcwd()` as root
 				require("neo-tree.command").execute({ toggle = true, dir = vim.fn.getcwd() })
@@ -45,7 +45,7 @@ return {
 			end,
 			desc = "Explorer NeoTree (cwd)",
 		},
-		{ "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
+		{ "<leader>e", "<leader>\\", desc = "Explorer NeoTree (Root Dir)", remap = true },
 		{ "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
 		{
 			"<leader>ge",

@@ -37,8 +37,11 @@ opt.hlsearch = false -- Set highlight on search, but clear on pressing <Esc> in 
 
 local map = vim.keymap.set
 
+map("n", "<CR>", "o<Esc>")
+
 map("n", "<Esc>", "<cmd>nohlsearch<cr>")
 map({ "i", "v" }, "<C-j>", "<Esc>")
+map("n", "<C-s>", "<cmd>w<cr>")
 
 -- Yank into clipboard
 map("n", "<leader>Y", '"+Y')

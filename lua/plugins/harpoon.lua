@@ -23,5 +23,14 @@ return {
 		map("<M-4>", function()
 			require("harpoon.ui").nav_file(4)
 		end, "open file 4")
+		map("<M-5>", function()
+			require("harpoon.ui").nav_file(5)
+		end, "open file 5")
+		map("<M-6>", function()
+			require("harpoon.ui").nav_file(6)
+		end, "open file 6")
+		map("<M-7>", function()
+			require("harpoon.ui").nav_file(7)
+		end, "open file 7")
 	end,
 }
