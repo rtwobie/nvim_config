@@ -1,5 +1,5 @@
 -- colors customized for posterpole.nvim
-local colors = {
+local posterpole = {
   green   = '#728C7B',
   blue   = '#6C7F92',
   black  = '#080808',
@@ -9,7 +9,10 @@ local colors = {
   grey   = '#303030',
 }
 
-local bubbles_theme = {
+-- change here to switch
+local colors = posterpole
+
+local custom_theme = {
   normal = {
     a = { fg = colors.black, bg = colors.violet },
     b = { fg = colors.white, bg = colors.grey },
@@ -33,16 +36,14 @@ return {
 	config = function()
 		require('lualine').setup({
 			options = {
-				theme = bubbles_theme,
+				theme = 'auto',
 				component_separators = '',
 				section_separators = { left = '', right = '' },
 			},
 			sections = {
 				lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
 				lualine_b = { 'filename', 'branch' },
-				lualine_c = {
-					'%=', --[[ add your center compoentnts here in place of this comment ]]
-				},
+				lualine_c = {},
 				lualine_x = {},
 				lualine_y = { 'filetype', 'progress' },
 				lualine_z = {
