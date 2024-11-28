@@ -1,17 +1,19 @@
 return {
 	{
 		'nyngwang/nvimgelion',
-		enabled = false,
+		lazy = true,
 		name = "nvimgelion",
 	},
 	{
 		'ptdewey/darkearth-nvim',
-		enabled = false,
-		name = "darkearth",
+		priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme darkearth]])
+		end,
 	},
 	{
 		"ilof2/posterpole.nvim",
-		priority = 1000,
+		lazy = true,
 		config = function()
 			vim.cmd([[colorscheme posterpole]])
 		end
