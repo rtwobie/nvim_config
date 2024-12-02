@@ -19,11 +19,14 @@ return {
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
-			keysword = {
+			keywords = {
 				HACK = {
 					icon = "",
 					color = "warning",
 					alt = { "BOUNTY" },
+				},
+				NOTE = {
+					alt = { "QUESTION", },
 				},
 				TODO = {
 					icon = "",
