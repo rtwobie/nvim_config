@@ -1,6 +1,7 @@
 if vim.g.neovide then
     -- Put anything you want to happen only in Neovide here
 	vim.g.neovide_cursor_animation_length = 0
+	vim.opt.guifont = "CaskaydiaMono Nerd Font Mono:h14"
 	-- vim.g.neovide_position_animation_length = -1
 	-- vim.g.neovide_cursor_trail_size = -1
 	-- vim.g.neovide_cursor_animate_in_insert_mode = false
