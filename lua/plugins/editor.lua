@@ -8,6 +8,10 @@ return {
 				-- custom stuff like
 				keys = {
 					["<"] = { escape = true, close = true, pair = "<>", enabled_filetypes = { "lua" } },
+					["("] = { escape = false, close = false, pair = "()", enabled_filetypes = {} },
+					["["] = { escape = false, close = false, pair = "[]", enabled_filetypes = {} },
+					["'"] = { escape = false, close = false, pair = "''", enabled_filetypes = {} },
+					["\""] = { escape = false, close = false, pair = "\"\"", enabled_filetypes = {} },
 				},
 			})
 		end,
