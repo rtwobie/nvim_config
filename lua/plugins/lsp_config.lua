@@ -159,6 +159,7 @@ return {
 					cmd = {
 						"clangd",
 						"--enable-config",
+						"--background-index",
 						"--header-insertion=never",
 					},
 				},
