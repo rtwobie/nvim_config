@@ -26,8 +26,10 @@ opt.updatetime = 250 -- Decrease update time
 opt.splitright = true
 opt.splitbelow = true
 
+-- diplay whitespaces
 opt.list = false
 opt.listchars = { tab = "> ", trail = "·", nbsp = "␣" }
+
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.inccommand = "split" -- Preview substitutions live, as you type!
@@ -37,11 +39,16 @@ opt.hlsearch = false -- Set highlight on search, but clear on pressing <Esc> in 
 
 local map = vim.keymap.set
 
+-- Disable Search highliting after pressing escape
+map("n", "<Esc>", "<cmd>nohlsearch<cr>")
+
+-- Escaping to normal mode
+-- map({ "i", "v" }, "<C-j>", "<Esc>")
+
 map("n", "<CR>", "o<Esc>")
 
-map("n", "<Esc>", "<cmd>nohlsearch<cr>")
-map({ "i", "v" }, "<C-j>", "<Esc>")
-map("n", "<C-s>", "<cmd>w<cr>")
+-- save file with Ctrl+S
+-- map("n", "<C-s>", "<cmd>w<cr>")
 
 -- Yank into clipboard
 map("n", "<leader>Y", '"+Y')
