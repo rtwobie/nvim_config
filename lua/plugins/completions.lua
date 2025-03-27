@@ -5,6 +5,7 @@ return {
 
 	{
 		"L3MON4D3/LuaSnip",
+		enabled = true,
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
@@ -13,6 +14,7 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
+		enabled = true,
 		config = function()
 			local luasnip = require("luasnip")
 			local cmp = require("cmp")
