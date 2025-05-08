@@ -90,3 +90,8 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.api.nvim_win_set_cursor(0, cursor_pos)
 	end,
 })
+
+local cmd = vim.cmd
+
+cmd("set colorcolumn=80")
+cmd("hi ColorColumn ctermbg=0 guibg=#2B2622")
