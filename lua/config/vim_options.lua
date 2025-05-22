@@ -95,3 +95,9 @@ local cmd = vim.cmd
 
 cmd("set colorcolumn=80")
 cmd("hi ColorColumn ctermbg=0 guibg=#2B2622")
+
+-- Listens to godot, for autoswitching between files in godot
+local projectfile = vim.fn.getcwd() .. '/project.godot'
+if projectfile then
+	vim.fn.serverstart '.godothost'
+end
