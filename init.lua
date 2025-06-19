@@ -1,8 +1,8 @@
 require("config.lazy")
-require("config.vim_options")
-require("config.neovide")
+require("config.lsp")
 
--- Add LSPs inside here to enable them
-vim.lsp.enable({
-	'clangd',
-})
+require("config.autocmd")
+require("config.keymaps")
+require("config.options")
+
+require("config.neovide")
