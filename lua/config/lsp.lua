@@ -6,9 +6,9 @@ vim.lsp.enable({
 -- Display Diagnostic Messages
 vim.diagnostic.config({
 	-- Use either virtual_text diagnostics in the line
-	-- virtual_text = true,
+	virtual_text = true,
 	-- or virutal_lines for diagnostics to the specific column
-	virtual_lines = true,
+	-- virtual_lines = true,
 
     underline = true,
     update_in_insert = false,
