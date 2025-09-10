@@ -3,6 +3,7 @@ return {
 	-- "tpope/vim-repeat",
 	{
 		"m4xshen/autoclose.nvim", -- Brace Pairing/Completion
+		enabled = false,
 		config = function()
 			require("autoclose").setup({
 				-- custom stuff like
@@ -28,13 +29,6 @@ return {
 					icon = "",
 					color = "warning",
 					alt = { "BOUNTY" },
-				},
-				NOTE = {
-					alt = { "QUESTION", },
-				},
-				TODO = {
-					icon = "",
-					alt = { "QUEST" },
 				},
 			}
 		},

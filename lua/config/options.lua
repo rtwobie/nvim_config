@@ -40,4 +40,4 @@ opt.hlsearch = false -- Set highlight on search, but clear on pressing <Esc> in 
 local cmd = vim.cmd
 
 cmd("set colorcolumn=80")
-cmd("hi ColorColumn ctermbg=0 guibg=#2B2622")
+-- cmd("hi ColorColumn ctermbg=0 guibg=#2B2622")
