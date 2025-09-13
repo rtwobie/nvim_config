@@ -1,1 +1,1 @@
-vim.cmd("colorscheme darkearth")
+-- vim.cmd("colorscheme darkearth")

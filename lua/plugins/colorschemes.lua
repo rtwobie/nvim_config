@@ -2,20 +2,12 @@ return {
 	{
 		"rktjmp/lush.nvim",
 		-- if you wish to use your own colorscheme:
-		{
-			dir = '/home/r2b/lovelain-color',
-			lazy = true,
-			-- priority = 1000,
-		},
+		-- {
+		-- 	dir = '/home/r2b/lovelain-color',
+		-- 	lazy = true,
+		-- 	-- priority = 1000,
+		-- },
 	},
-	-- {
-	-- 	'AlphaTechnolog/pywal.nvim',
-	-- 	name = 'pywal',
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme pywal]])
-	-- 	end,
-	-- },
 	{
 		'nyngwang/nvimgelion',
 		lazy = true,
@@ -41,6 +33,22 @@ return {
 		-- priority = 1000,
 		config = function()
 			vim.cmd([[colorscheme carbonfox]])
+		end,
+	},
+	{
+		"shaunsingh/nord.nvim",
+		lazy = true,
+		config = function()
+			vim.cmd("colorscheme nord")
+		end,
+	},
+	{
+		"bluz71/vim-moonfly-colors",
+		name = "moonfly",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme moonfly")
 		end,
 	},
 }
