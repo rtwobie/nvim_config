@@ -1,8 +1,3 @@
--- Add LSPs inside here to enable them
-vim.lsp.enable({
-	'clangd',
-})
-
 -- Display Diagnostic Messages
 vim.diagnostic.config({
 	-- Use either virtual_text diagnostics in the line
@@ -29,4 +24,9 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.WARN] = "WarningMsg",
         },
     },
+})
+
+-- Add LSPs inside here to enable them
+vim.lsp.enable({
+	'clangd',
 })
