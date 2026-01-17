@@ -51,4 +51,11 @@ return {
 			vim.cmd("colorscheme moonfly")
 		end,
 	},
+	{
+		"nyoom-engineering/oxocarbon.nvim",
+		lazy = true,
+		config = function()
+			vim.cmd("colorscheme oxocarbon")
+		end,
+	},
 }

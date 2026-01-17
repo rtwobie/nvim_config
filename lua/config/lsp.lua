@@ -29,4 +29,5 @@ vim.diagnostic.config({
 -- Add LSPs inside here to enable them
 vim.lsp.enable({
 	'clangd',
+	'qmlls',
 })
