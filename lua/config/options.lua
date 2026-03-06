@@ -5,6 +5,7 @@ opt.relativenumber = true
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
+opt.expandtab = true
 opt.mouse = "a"
 
 opt.showmode = false
