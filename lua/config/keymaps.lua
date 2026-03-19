@@ -12,7 +12,7 @@ map("n", "<CR>", "o<Esc>")
 -- map("n", "<C-s>", "<cmd>w<cr>")
 
 -- Yank into clipboard
-map("n", "<leader>Y", '"+Y')
+map({ "n", "v", "x" }, "<leader>Y", '"+Y')
 
 -- move lines with Alt
 map("v", "<M-j>", ":m '>+1<CR>gv=gv")
