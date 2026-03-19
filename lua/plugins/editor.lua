@@ -1,22 +1,5 @@
 return {
 	{ "tpope/vim-surround" }, -- adds commands for surrounding text with braces and quotes etc.
-	-- "tpope/vim-repeat",
-	{
-		"m4xshen/autoclose.nvim", -- Brace Pairing/Completion
-		enabled = false,
-		config = function()
-			require("autoclose").setup({
-				-- custom stuff like
-				keys = {
-					["<"] = { escape = true, close = true, pair = "<>", enabled_filetypes = { "lua" } },
-					["("] = { escape = false, close = false, pair = "()", enabled_filetypes = {} },
-					["["] = { escape = false, close = false, pair = "[]", enabled_filetypes = {} },
-					["'"] = { escape = false, close = false, pair = "''", enabled_filetypes = {} },
-					["\""] = { escape = false, close = false, pair = "\"\"", enabled_filetypes = {} },
-				},
-			})
-		end,
-	},
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },

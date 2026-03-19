@@ -9,6 +9,7 @@ opt.expandtab = true
 opt.mouse = "a"
 
 opt.showmode = false
+opt.termguicolors = true
 
 opt.breakindent = true -- Enable break indent
 opt.autoindent = true

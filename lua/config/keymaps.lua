@@ -12,7 +12,7 @@ map("n", "<CR>", "o<Esc>")
 -- map("n", "<C-s>", "<cmd>w<cr>")
 
 -- Yank into clipboard
-map("n", "<leader>Y", '"+Y')
+map({ "n", "v", "x" }, "<leader>Y", '"+Y')
 
 -- move lines with Alt
 map("v", "<M-j>", ":m '>+1<CR>gv=gv")
@@ -27,3 +27,8 @@ map("v", "<M-l>", "lholhxp`[1v")
 map("v", "<M-h>", "hlohlxhP`[1v")
 map("n", "<M-l>", "xp")
 map("n", "<M-h>", "xhhp")
+
+-- Plugin keymaps
+map("n", "<leader>sf", "<CMD>Pick files<CR>", { desc = "MiniPick file search" })
+map("n", "<leader>sg", "<CMD>Pick grep_live<CR>", { desc = "MiniPick grep search" })
+map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

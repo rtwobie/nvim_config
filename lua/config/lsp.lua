@@ -30,4 +30,5 @@ vim.diagnostic.config({
 vim.lsp.enable({
 	'clangd',
 	'qmlls',
+    'lua_ls',
 })
