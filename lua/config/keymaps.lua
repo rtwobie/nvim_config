@@ -29,6 +29,17 @@ map("n", "<M-l>", "xp")
 map("n", "<M-h>", "xhhp")
 
 -- Plugin keymaps
-map("n", "<leader>sf", "<CMD>Pick files<CR>", { desc = "MiniPick file search" })
-map("n", "<leader>sg", "<CMD>Pick grep_live<CR>", { desc = "MiniPick grep search" })
+
+-- fzf-lua
+map("n", "<leader>ff", "<CMD>:FzfLua files<CR>", { desc = "Find file" })
+map("n", "<leader>fb", "<CMD>:FzfLua buffe s<CR>", { desc = "Find buffers" })
+map("n", "<leader>fgr", "<CMD>:FzfLua grep<CR>", { desc = "Find by live grep" })
+map("n", "<leader>fgw", "<CMD>:FzfLua grep_cword<CR>", { desc = "Find by current word" })
+map("n", "<leader>fgW", "<CMD>:FzfLua grep_cWORD<CR>", { desc = "Find by current WORD" })
+
+-- oil
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- compile-mode
+map("n", "<leader>c", "<CMD>:Compile<CR>", { desc = "Enter Compile Mode" })
+map("n", "<leader>rc", "<CMD>:Recompile<CR>", { desc = "Recompile" })
