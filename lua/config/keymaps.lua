@@ -32,7 +32,7 @@ map("n", "<M-h>", "xhhp")
 
 -- fzf-lua
 map("n", "<leader>ff", "<CMD>:FzfLua files<CR>", { desc = "Find file" })
-map("n", "<leader>fb", "<CMD>:FzfLua buffe s<CR>", { desc = "Find buffers" })
+map("n", "<leader>fb", "<CMD>:FzfLua buffers<CR>", { desc = "Find buffers" })
 map("n", "<leader>fgr", "<CMD>:FzfLua grep<CR>", { desc = "Find by live grep" })
 map("n", "<leader>fgw", "<CMD>:FzfLua grep_cword<CR>", { desc = "Find by current word" })
 map("n", "<leader>fgW", "<CMD>:FzfLua grep_cWORD<CR>", { desc = "Find by current WORD" })
